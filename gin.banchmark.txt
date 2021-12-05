@@ -1,0 +1,24 @@
+h2load -n10000 -c100 -m10 --h1  http://127.0.0.1:8085/check
+starting benchmark...
+spawning thread #0: 100 total client(s). 10000 total requests
+Application protocol: http/1.1
+progress: 10% done
+progress: 20% done
+progress: 30% done
+progress: 40% done
+progress: 50% done
+progress: 60% done
+progress: 70% done
+progress: 80% done
+progress: 90% done
+progress: 100% done
+
+finished in 125.71ms, 79546.27 req/s, 11.83MB/s
+requests: 10000 total, 10000 started, 10000 done, 10000 succeeded, 0 failed, 0 errored, 0 timeout
+status codes: 10000 2xx, 0 3xx, 0 4xx, 0 5xx
+traffic: 1.49MB (1560000) total, 898.44KB (920000) headers (space savings 0.00%), 322.27KB (330000) data
+                     min         max         mean         sd        +/- sd
+time for request:      140us     45.64ms     11.07ms      7.63ms    70.56%
+time for connect:     1.93ms      2.97ms      2.37ms       186us    71.00%
+time to 1st byte:    13.49ms     24.76ms     19.30ms      2.30ms    70.00%
+req/s           :     800.88     1161.52      868.96       70.61    85.00%
