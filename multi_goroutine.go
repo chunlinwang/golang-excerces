@@ -18,7 +18,7 @@ func main() {
 	var wg sync.WaitGroup
 
 	t1 := time.Now()
-	fmt.Println("Main: Completed, start at : ", t1)
+	fmt.Println("Main: Start at : ", t1)
 
 	for i := 0; i < 5; i++ {
 		fmt.Println("Main: Starting worker", i, time.Now())
@@ -29,6 +29,6 @@ func main() {
 	fmt.Println("Main: Waiting for workers to finish", time.Now())
 	wg.Wait()
 	t2 := time.Now()
-	fmt.Println("Main: Completed, stop at : ", t2)
-	fmt.Println("time : ", t2.UnixMilli()-t1.UnixMilli())
+	fmt.Println("Main: Stop at : ", t2)
+	fmt.Println("time execute : ", t2.UnixMilli()-t1.UnixMilli())
 }

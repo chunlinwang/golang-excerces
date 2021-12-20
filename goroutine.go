@@ -12,6 +12,13 @@ func worker(finished chan bool) {
 	finished <- true
 }
 
+func workerInt(intVal chan int) {
+	fmt.Println("Worker intVal: Started")
+	time.Sleep(time.Second)
+	fmt.Println("Worker intVal: Finished")
+	intVal <- 999
+}
+
 func main() {
 	finished := make(chan bool)
 
@@ -19,6 +26,14 @@ func main() {
 	go worker(finished)
 
 	fmt.Println("Main: Waiting for worker to finish")
-	<-finished
-	fmt.Println("Main: Completed")
+	data := <-finished
+
+	fmt.Println("Main: Completed", data)
+
+	intVal := make(chan int)
+	go workerInt(intVal)
+
+	intV := <-intVal
+
+	fmt.Println("Main: intVal", intV)
 }
