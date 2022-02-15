@@ -51,6 +51,8 @@ func main() {
 		Groups: "test",
 	}
 	perB, _ := json.Marshal(perD)
+
+	//_, err := json.Marshal(perD)
 	fmt.Println(string(perB))
 
 	// serializer with group.
